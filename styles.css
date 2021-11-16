@@ -19,6 +19,9 @@ body {
   justify-content: space-between;
 }
 .tabla {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   width: 50%;
   margin: 5px;
   color: var(--main-font-color);
@@ -43,7 +46,9 @@ body {
   margin-bottom: 15px;
   width: 75%;
   height: 25px;
-  focus: none;
+}
+.sidebar-left input:focus {
+  border: none;
 }
 
 .sidebar-left button {
@@ -69,4 +74,11 @@ body {
   display: flex;
   align-self: start;
   margin-left: 4.5em;
+}
+
+.bg-dark {
+  background-color: #bdc3c7;
+}
+.bg-light {
+  background-color: #ecf0f1;
 }

@@ -4,13 +4,13 @@ var app = new Vue({
     items: [
       {
         id: 1,
-        nombre: "fruta",
+        nombre: "Manzana",
         precio: "$12",
         stock: true,
       },
       {
         id: 2,
-        nombre: "verdura",
+        nombre: "Naranja",
         precio: "$10",
         stock: false,
       },
@@ -21,5 +21,23 @@ var app = new Vue({
         stock: true,
       },
     ],
+    inputId: "",
+    inputNombre: "",
+    inputPrecio: "",
+    inputStock: false,
+  },
+  methods: {
+    itemStock() {
+      this.items.stock = !this.items.stock;
+    },
+    addItem() {
+      const newItem = {
+        id: this.inputId,
+        nombre: this.inputNombre,
+        precio: this.inputPrecio,
+        stock: this.inputStock,
+      };
+      this.items.push(newItem);
+    },
   },
 });

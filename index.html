@@ -20,29 +20,37 @@
       <div class="sidebar-left">
         <h3>Agregar Item</h3>
         <span class="left-label">Id:</span>
-        <input type="number" />
+        <input v-model="inputId" type="number" />
         <span class="left-label">Nombre:</span>
-        <input type="text" />
+        <input v-model="inputNombre" type="text" />
         <span class="left-label">Precio: ($)</span>
-        <input type="text" />
-        <button>Guardar</button>
+        <input v-model="inputPrecio" type="text" />
+        <span>Stock?</span>
+        <input type="checkbox" v-model="inputStock" >
+        <button @click="addItem">Guardar</button>
       </div>
-      <table class="tabla">
+      <div class="tabla">
+        <h3>Listado de Items</h3>
+      <table >
         <thead>
-          <tr>
+          <tr ></tr>
             <th>Id</th>
             <th>Item</th>
             <th>Precio</th>
+            <th>Stock</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, i) in items" :key="i">
+          <tr v-for="(item, i) in items" :key="i" :class="i % 2 === 0 ? 'bg-dark' : 'bg-light'">
             <th>{{item.id}}</th>
             <th>{{item.nombre}}</th>
             <th>{{item.precio}}</th>
+            <th v-if="item.stock">Hay</th>
+            <th v-else>No Hay</th>
           </tr>
         </tbody>
       </table>
+    </div>
     </div>
   </body>
 </html>
