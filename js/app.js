@@ -27,9 +27,6 @@ var app = new Vue({
     inputStock: false,
   },
   methods: {
-    itemStock() {
-      this.items.stock = !this.items.stock;
-    },
     addItem() {
       const newItem = {
         id: this.inputId,
